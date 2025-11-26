@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 5. 必須フィールドの存在チェック
-    const { name, email, company, phone, message } = body;
+    const { name, email, company, phone, message, hiring_timing } = body;
 
     if (!name || typeof name !== "string") {
       return errorResponse("名前は必須です", 400);
@@ -79,24 +79,28 @@ export async function POST(request: NextRequest) {
     if (!email || typeof email !== "string") {
       return errorResponse("メールアドレスは必須です", 400);
     }
-    if (!message || typeof message !== "string") {
-      return errorResponse("お問い合わせ内容は必須です", 400);
+    if (!company || typeof company !== "string") {
+      return errorResponse("会社名は必須です", 400);
+    }
+    if (!phone || typeof phone !== "string") {
+      return errorResponse("電話番号は必須です", 400);
+    }
+    if (!hiring_timing || typeof hiring_timing !== "string") {
+      return errorResponse("採用希望時期は必須です", 400);
     }
 
     // オプショナルフィールドの型チェック
-    if (company !== undefined && company !== null && typeof company !== "string") {
-      return errorResponse("会社名の形式が不正です", 400);
-    }
-    if (phone !== undefined && phone !== null && typeof phone !== "string") {
-      return errorResponse("電話番号の形式が不正です", 400);
+    if (message !== undefined && message !== null && typeof message !== "string") {
+      return errorResponse("お問い合わせ内容の形式が不正です", 400);
     }
 
     // 6. 入力値のトリム
     const trimmedName = name.trim();
     const trimmedEmail = email.trim().toLowerCase();
-    const trimmedCompany = company?.trim() || "";
-    const trimmedPhone = phone?.trim() || "";
-    const trimmedMessage = message.trim();
+    const trimmedCompany = company.trim();
+    const trimmedPhone = phone.trim();
+    const trimmedHiringTiming = hiring_timing.trim();
+    const trimmedMessage = message?.trim() || "";
 
     // 7. 悪意のあるパターン検出（XSS、SQLインジェクション）
     const fieldsToCheck = [
@@ -104,6 +108,7 @@ export async function POST(request: NextRequest) {
       { name: "メールアドレス", value: trimmedEmail },
       { name: "会社名", value: trimmedCompany },
       { name: "電話番号", value: trimmedPhone },
+      { name: "採用希望時期", value: trimmedHiringTiming },
       { name: "お問い合わせ内容", value: trimmedMessage },
     ];
 
@@ -127,25 +132,32 @@ export async function POST(request: NextRequest) {
       return errorResponse("有効なメールアドレスを入力してください", 400);
     }
 
-    if (trimmedCompany && !isValidCompany(trimmedCompany)) {
+    if (!isValidCompany(trimmedCompany)) {
       return errorResponse("会社名は200文字以内で入力してください", 400);
     }
 
-    if (trimmedPhone && !isValidPhone(trimmedPhone)) {
+    if (!isValidPhone(trimmedPhone)) {
       return errorResponse("有効な電話番号を入力してください", 400);
     }
 
-    if (!isValidMessage(trimmedMessage)) {
-      return errorResponse("お問い合わせ内容は1〜5000文字で入力してください", 400);
+    // 採用希望時期のバリデーション
+    const validHiringTimings = ["1month", "3months", "6months", "1year", "undecided"];
+    if (!validHiringTimings.includes(trimmedHiringTiming)) {
+      return errorResponse("有効な採用希望時期を選択してください", 400);
+    }
+
+    if (trimmedMessage && !isValidMessage(trimmedMessage)) {
+      return errorResponse("お問い合わせ内容は5000文字以内で入力してください", 400);
     }
 
     // 9. 入力のサニタイズ（保存前）
     const sanitizedData = {
       name: sanitizeInput(trimmedName),
       email: trimmedEmail, // メールアドレスはサニタイズしない（検証済み）
-      company: trimmedCompany ? sanitizeInput(trimmedCompany) : null,
-      phone: trimmedPhone ? sanitizeInput(trimmedPhone) : null,
-      message: sanitizeInput(trimmedMessage),
+      company: sanitizeInput(trimmedCompany),
+      phone: sanitizeInput(trimmedPhone),
+      hiring_timing: trimmedHiringTiming, // 列挙型のためサニタイズ不要（検証済み）
+      message: trimmedMessage ? sanitizeInput(trimmedMessage) : null,
     };
 
     // 10. Supabaseにデータを保存

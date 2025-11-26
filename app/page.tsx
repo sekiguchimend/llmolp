@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ConcernsSection from "@/components/ConcernsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import CtaSection from "@/components/CtaSection";
@@ -5,6 +6,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FlowSection from "@/components/FlowSection";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -103,13 +105,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 右側イラスト - プレースホルダー */}
+        {/* 右側イラスト */}
         <div className="w-[45%] flex items-center justify-center">
           <div className="relative">
-            {/* メインダッシュボード画像プレースホルダー */}
-            <div className="w-[500px] h-[350px] bg-white rounded-lg shadow-xl flex items-center justify-center text-gray-400 border">
-              [右側イラスト プレースホルダー]
-            </div>
+            <Image
+              src="/top.png"
+              alt="AIハンティングダッシュボード"
+              width={500}
+              height={400}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
@@ -131,6 +136,7 @@ export default function Home() {
     <TestimonialsSection />
     <FlowSection />
     <ContactSection />
+    <Footer />
     </>
   );
 }
