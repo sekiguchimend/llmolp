@@ -66,34 +66,36 @@ export default function ConcernsSection() {
   ];
 
   return (
-    <section id="concerns" className="py-20 bg-white">
+    <section id="concerns" className="py-12 md:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         {/* タイトル */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-extrabold text-[#323232] mb-3">
+        <div className="text-center mb-10 md:mb-20">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-[#323232] mb-2 md:mb-3">
             採用市場を困らせる
           </h2>
-          <p className="text-5xl font-extrabold text-orange-500">
+          <p className="text-3xl md:text-5xl font-extrabold text-orange-500">
             3つのポイント
           </p>
         </div>
 
         {/* 3つのカード */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {concerns.map((concern, index) => (
             <div key={index} className="flex flex-col items-center">
               {/* アイコン */}
-              <div className="mb-8">
-                {concern.icon}
+              <div className="mb-4 md:mb-8">
+                <div className="w-28 h-28 md:w-40 md:h-40">
+                  {concern.icon}
+                </div>
               </div>
 
               {/* カード */}
-              <div className="bg-gray-100 rounded-lg p-8 w-full h-full">
-                <h3 className="text-2xl font-extrabold text-center mb-5 text-[#323232]">
+              <div className="bg-gray-100 rounded-lg p-5 md:p-8 w-full h-full">
+                <h3 className="text-xl md:text-2xl font-extrabold text-center mb-3 md:mb-5 text-[#323232]">
                   {concern.title}
                   <span className="text-orange-500">{concern.highlight}</span>
                 </h3>
-                <p className="text-[#323232] text-[17px] font-bold leading-relaxed">
+                <p className="text-sm md:text-[17px] text-[#323232] font-bold leading-relaxed">
                   {concern.description}
                 </p>
               </div>

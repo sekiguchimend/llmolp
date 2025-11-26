@@ -64,34 +64,34 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-[#E3EEFF]">
+    <section id="contact" className="py-10 md:py-16 bg-[#E3EEFF]">
       {/* 上部の黄色いバナー */}
-      <div className="flex justify-center mb-12">
+      <div className="flex justify-center mb-8 md:mb-12 px-4">
         <div className="relative">
-          <div className="bg-[#FFEB3B] px-8 py-3 rounded-[10px] shadow-md">
-            <p className="text-[#F26B3A] text-lg font-bold">
-              本格的な採用シーズン開始前にお問い合わせください！
+          <div className="bg-[#FFEB3B] px-4 md:px-8 py-2 md:py-3 rounded-[10px] shadow-md">
+            <p className="text-[#F26B3A] text-sm md:text-lg font-bold text-center">
+              本格的な採用シーズン開始前に<br className="md:hidden" />お問い合わせください！
             </p>
           </div>
           {/* 吹き出しの尾 */}
-          <div className="absolute -bottom-[10px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#FFEB3B]"></div>
+          <div className="absolute -bottom-[8px] md:-bottom-[10px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[10px] md:border-l-[12px] border-r-[10px] md:border-r-[12px] border-t-[10px] md:border-t-[12px] border-l-transparent border-r-transparent border-t-[#FFEB3B]"></div>
         </div>
       </div>
 
       {/* フォームカード */}
       <div className="max-w-xl mx-auto px-4">
-        <div className="bg-white rounded-3xl shadow-lg p-10">
+        <div className="bg-white rounded-2xl md:rounded-3xl shadow-lg p-6 md:p-10">
           {/* タイトル */}
-          <div className="text-center mb-10">
-            <p className="text-[#F26B3A] text-xl font-bold mb-1">簡単60秒で</p>
-            <h2 className="text-[#323232] text-3xl font-bold">資料請求ダウンロード</h2>
+          <div className="text-center mb-6 md:mb-10">
+            <p className="text-[#F26B3A] text-lg md:text-xl font-bold mb-1">簡単60秒で</p>
+            <h2 className="text-[#323232] text-2xl md:text-3xl font-bold">資料請求ダウンロード</h2>
           </div>
 
           {/* フォーム */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             {/* 会社名 */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 会社名 <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <input
@@ -101,13 +101,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 placeholder="株式会社〇〇"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent text-sm md:text-base"
               />
             </div>
 
             {/* お名前 */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 お名前 <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <input
@@ -117,13 +117,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 placeholder="山田 太郎"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent text-sm md:text-base"
               />
             </div>
 
             {/* 電話番号 */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 電話番号 <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <input
@@ -133,13 +133,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 placeholder="000-0000-0000"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent text-sm md:text-base"
               />
             </div>
 
             {/* メールアドレス */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 メールアドレス <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <input
@@ -149,13 +149,13 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 placeholder="xxxxxxxx@example.com"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent text-sm md:text-base"
               />
             </div>
 
             {/* 採用希望時期 */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 採用希望時期 <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <select
@@ -163,7 +163,7 @@ export default function ContactSection() {
                 value={formData.hiring_timing}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent bg-white text-gray-500"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent bg-white text-gray-500 text-sm md:text-base"
               >
                 <option value="" disabled>選択してください</option>
                 <option value="1month">1ヶ月以内</option>
@@ -176,7 +176,7 @@ export default function ContactSection() {
 
             {/* その他 */}
             <div>
-              <label className="block text-sm font-medium text-[#323232] mb-2">
+              <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
                 その他
               </label>
               <textarea
@@ -185,7 +185,7 @@ export default function ContactSection() {
                 onChange={handleInputChange}
                 placeholder="サービスへのご質問や人材に関するご質問がある方は記載ください。"
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent resize-none"
+                className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent resize-none text-sm md:text-base"
               />
             </div>
 
@@ -216,11 +216,11 @@ export default function ContactSection() {
             )}
 
             {/* 送信ボタン */}
-            <div className="pt-4">
+            <div className="pt-2 md:pt-4">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-full text-white text-lg font-bold shadow-lg transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 md:py-4 rounded-full text-white text-base md:text-lg font-bold shadow-lg transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
                   background: 'linear-gradient(180deg, #FDBA74 0%, #F26B3A 100%)',
                 }}

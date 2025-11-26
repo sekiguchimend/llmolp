@@ -31,39 +31,39 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-16 relative" style={{ backgroundColor: '#E3EEFF' }}>
+    <section id="testimonials" className="py-10 md:py-16 relative" style={{ backgroundColor: '#E3EEFF' }}>
       {/* 下部の逆V字装飾 */}
-      <div 
-        className="absolute bottom-0 left-0 w-full h-24 overflow-hidden"
-        style={{ 
+      <div
+        className="absolute bottom-0 left-0 w-full h-16 md:h-24 overflow-hidden"
+        style={{
           clipPath: 'polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%)',
           backgroundColor: '#E3EEFF'
         }}
       >
-        <div className="w-full h-full bg-white" style={{ 
+        <div className="w-full h-full bg-white" style={{
           clipPath: 'polygon(0 0, 50% 100%, 100% 0)'
         }}></div>
       </div>
-      
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* タイトル */}
-        <h2 className="text-center mb-12 text-gray-800 font-black" style={{ fontSize: '34px' }}>
+        <h2 className="text-center mb-8 md:mb-12 text-gray-800 font-black text-2xl md:text-4xl">
           お客様の声
         </h2>
 
         {/* 証言カードグリッド */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-y-8 md:gap-x-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl p-8"
+              className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8"
             >
               {/* 上部：アイコンとタイトル */}
-              <div className="flex items-center gap-6 mb-6">
+              <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-6">
                 {/* 人物アイコン */}
-                <div className="flex-shrink-0 w-24 h-24 bg-white rounded-xl flex items-center justify-center border-4 border-gray-800">
+                <div className="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 bg-white rounded-xl flex items-center justify-center border-3 md:border-4 border-gray-800">
                   <svg
-                    className="w-16 h-16 text-gray-700"
+                    className="w-10 h-10 md:w-16 md:h-16 text-gray-700"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
 
                 {/* タイトルとハイライト */}
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">
+                  <h3 className="text-base md:text-xl font-bold text-gray-800 leading-tight mb-1 md:mb-2">
                     {testimonial.title}
                     <span className="text-red-500">{testimonial.highlight}</span>
                   </h3>
@@ -85,12 +85,12 @@ export default function TestimonialsSection() {
               </div>
 
               {/* 会社情報 */}
-              <p className="text-base font-semibold text-gray-700 mb-4">
+              <p className="text-sm md:text-base font-semibold text-gray-700 mb-3 md:mb-4">
                 {testimonial.company}
               </p>
 
               {/* 詳細説明 */}
-              <p className="text-base text-gray-800 leading-relaxed whitespace-pre-line font-bold">
+              <p className="text-sm md:text-base text-gray-800 leading-relaxed whitespace-pre-line font-bold">
                 {testimonial.description}
               </p>
             </div>
