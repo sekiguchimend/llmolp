@@ -11,7 +11,7 @@ export default function Header() {
       <div className="flex items-stretch">
         {/* Logo - 左側 */}
         <Link href="/" className="text-xl md:text-2xl font-bold text-blue-600 px-4 md:px-8 py-4 flex items-center">
-          Tecmon
+          Umoren.ai
         </Link>
 
         {/* Navigation - 右寄せ (PC) */}

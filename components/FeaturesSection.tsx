@@ -10,7 +10,7 @@ export default function FeaturesSection() {
           <div className="h-[2px] bg-[#3B82F6] w-full"></div>
         </div>
         <h2 className="text-3xl md:text-5xl font-bold">
-          <span className="text-[#323232]">AIハンティング</span><span className="text-[#F26B3A] text-4xl md:text-6xl">4</span><span className="text-[#323232]">つの特徴</span>
+          <span className="text-[#323232]">LLM可視化・改善サービス</span><span className="text-[#F26B3A] text-4xl md:text-6xl">4</span><span className="text-[#323232]">つの特徴</span>
         </h2>
       </div>
 
@@ -23,13 +23,15 @@ export default function FeaturesSection() {
           <div className="w-full md:w-1/2">
             <p className="text-white text-3xl md:text-5xl font-bold mb-4 md:mb-6">01</p>
             <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-2">
-              待つ採用は今日で終わり
+              「待つSEO」は今日で終わり
             </h3>
             <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-4 md:mb-6">
-              これからは<span className="text-[#F26B3A]">"攻める採用"</span>
+              これからは<span className="text-[#F26B3A]">「攻める LLM 可視化」</span>へ
             </h3>
             <p className="text-sm md:text-base text-[#323232] leading-relaxed">
-              8,000名以上の精選されたIT人材データベースから、AIが求める人材を見つけ出します。非公開求人でもダイレクトにアプローチ可能。受け身の採用活動から、能動的な採用戦略へシフトします。
+              自社名・サービス名・ユースケースなどから、ユーザーが LLM に投げるであろうプロンプトを自動生成。さらに、指定したプロンプトを毎日自動で実行し、
+              ChatGPT / Gemini / Perplexity / Claude / Grok など複数 LLM 上での「言及状況」「競合との並び」を可視化します。
+              検索結果を“待つ”のではなく、狙ったプロンプトで自社がどう扱われているのかを能動的に検証し、AI検索に最適化されたコンテンツ戦略へシフトできます。
             </p>
           </div>
 
@@ -138,13 +140,16 @@ export default function FeaturesSection() {
           <div className="w-full md:w-1/2">
             <p className="text-white text-3xl md:text-5xl font-bold mb-4 md:mb-6">02</p>
             <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-2">
-              あらゆるデータを可視化して、
+              LLMの回答と自社サイトを可視化し、
             </h3>
             <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-4 md:mb-6">
-              <span className="text-[#F26B3A]">"面接上手"</span>を見逃さない
+              「機会損失」を見逃さない
             </h3>
             <p className="text-sm md:text-base text-[#323232] leading-relaxed">
-              独自開発のAIエンジンが、過去の実務経験を20項目以上の評価軸で徹底分析。プロジェクト規模、役割、技術スタックまで、実務で本当に必要なスキルレベルを可視化します。
+              Firecrawl で自社サイト全体をクロールし、ページ構造やテキストをまるごと解析。
+              「どのプロンプトに対して」「どのページがどれくらい効いているのか」「どのテーマが強く、どのテーマが弱いのか」をマトリクスで表示します。
+              さらに、LLM の実際の回答文と比較することで、「どのプロンプトで競合ばかりが推されているか」「自社の強みがうまく説明されていない箇所はどこか」といった
+              「取りこぼしポイント」を一目で把握できます。
             </p>
           </div>
           </div>
@@ -159,13 +164,15 @@ export default function FeaturesSection() {
               <div className="w-full md:w-1/2">
                 <p className="text-[#3B82F6] text-3xl md:text-5xl font-bold mb-4 md:mb-6">03</p>
                 <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-2">
-                  独自かつ各社オリジナルの適正検査で
+                  専任コンサルによるコンテンツ設計で
                 </h3>
                 <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-4 md:mb-6">
-                  入社後のミスマッチを<span className="text-[#F26B3A]">"極限まで0に"</span>
+                  LLMとのミスマッチを<span className="text-[#F26B3A]">「極限まで 0 に」</span>
                 </h3>
                 <p className="text-sm md:text-base text-[#323232] leading-relaxed">
-                  技術の学習速度、キャリアの方向性、成長意欲。独自の成長性評価モデルで、将来の伸びしろを予測します。御社の将来を見据えた、真の即戦力人材をご紹介します。
+                  SaaS だけでなく、希望企業には専任コンサルティングチームが伴走。
+                  「LLM 上で狙いたいプロンプトの設計」「そのプロンプトに最適化されたページ構成案の作成」「既存ページのリライト方針の策定」まで、
+                  実運用を前提に設計します。LLM が拾いやすい情報を整理し、AI検索における“認識のミスマッチ”を最小化します。
                 </p>
               </div>
 
@@ -202,10 +209,13 @@ export default function FeaturesSection() {
               <div>
                 <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 mb-6 md:mb-8">
                   <h4 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">
-                    <span className="bg-yellow-300 px-2 text-[#F26B3A]">AIヘッドハンティング</span><span className="text-[#323232]">とは</span>
+                    <span className="bg-yellow-300 px-2 text-[#F26B3A]">LLM可視化・最適化</span><span className="text-[#323232]">とは</span>
                   </h4>
                   <p className="text-sm md:text-lg text-[#323232] leading-loose font-medium">
-                    候補者のスキル・キャリア志向・市場動向をリアルタイムに分析し、企業が求める「人材」にマッチする候補者にスカウトを送ることができる、次世代のリクルートサービスです。
+                    ChatGPT や Gemini、Perplexity などの LLM がユーザーの質問に回答する際、
+                    「どのサイトを参照し」「どのような文章で企業やサービスを紹介するのか」を横断的に分析し、
+                    AI 検索上のブランド認知・比較・指名を設計するための次世代マーケティング手法です。
+                    Umoren.ai は LLM の回答ログとサイトコンテンツを紐づけ、AI 時代の「見られ方」を戦略レベルでコントロールできるようにします。
                   </p>
                 </div>
                 {/* 吹き出し */}
@@ -227,10 +237,12 @@ export default function FeaturesSection() {
               <div>
                 <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 mb-6 md:mb-8">
                   <h4 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">
-                    <span className="text-[#323232]">なぜ</span><span className="bg-yellow-300 px-2 text-[#F26B3A]">人材が集まる</span><span className="text-[#323232]">のか</span>
+                    <span className="text-[#323232]">なぜ</span><span className="bg-yellow-300 px-2 text-[#F26B3A]"> LLM で「選ばれる」</span><span className="text-[#323232]">のか</span>
                   </h4>
                   <p className="text-sm md:text-lg text-[#323232] leading-loose font-medium">
-                    企業側だけでなく候補者にも、AIを活用した自身の将来キャリアプランの作成を行っております。自身が大切にしたい軸からキャリア形成できるため優秀な人材が集まります。
+                    企業側だけでなく、ユーザー側の行動も変わりつつあります。「まずは AI に聞いてから検索する」ユーザーが増え、
+                    「最初に AI におすすめされたブランド」「比較候補として並んだ 2〜3 社」がそのまま問い合わせ・資料請求候補になります。
+                    Umoren.ai は AI が理解しやすい形で強みを整理し、ユースケースや導入事例を提示することで、LLM 上で「最初に名前が出る会社」を増やしていきます。
                   </p>
                 </div>
                 {/* 吹き出し */}
@@ -298,13 +310,15 @@ export default function FeaturesSection() {
             <div className="w-full md:w-1/2">
               <p className="text-[#3B82F6] text-3xl md:text-5xl font-bold mb-4 md:mb-6">04</p>
               <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-2">
-                入社後の活躍を、事前に予測。
+                未来の LLM 露出を、事前に設計。
               </h3>
               <h3 className="text-xl md:text-3xl font-bold text-[#323232] leading-relaxed mb-4 md:mb-6">
-                <span className="text-[#F26B3A]">"伸びしろ"</span>で未来の人財を確保
+                継続的なモニタリングで<span className="text-[#F26B3A]">「指名検索」</span>を獲得
               </h3>
               <p className="text-sm md:text-base text-[#323232] leading-relaxed">
-                チーム構成、企業文化、仕事の進め方。さまざまな要素をAIが分析し、組織にフィットする人材を厳選。早期離職リスクを最小限に抑え、長期的な活躍を実現します。
+                ダッシュボードでは、プロンプトごと・LLM ごとの露出状況を日次でトラッキング可能。
+                新しいページ公開後の LLM 上での言及変化や、競合の動きによる自社ポジションの揺れを継続的に追うことで、
+                一度きりの診断ではなく「変化し続ける AI検索」に合わせて改善サイクルを回し続けられます。
               </p>
             </div>
           </div>

@@ -6,17 +6,16 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-4 text-center">
         {/* 会社名 */}
         <p className="text-white text-base md:text-lg font-medium mb-3 md:mb-4">
-          株式会社Tecmon
+          Umoren.ai
         </p>
 
-        {/* 郵便番号 */}
+        {/* 郵便番号・住所 */}
         <p className="text-gray-400 text-xs md:text-sm mb-1">
-          〒361-9841
+          〒104-0061
         </p>
-
-        {/* 住所 */}
         <p className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6">
-          東京都中央区0-00-0 シルバービルディング7F
+        東京都中央区銀座８丁目17-5
+        THE HUB 銀座 OCT
         </p>
 
         {/* プライバシーポリシー */}
@@ -29,7 +28,7 @@ export default function Footer() {
 
         {/* コピーライト */}
         <p className="text-gray-500 text-xs md:text-sm mt-4 md:mt-6">
-          © 2024 Tecmon Inc.
+          © 2025 Umoren.ai Inc.
         </p>
       </div>
     </footer>

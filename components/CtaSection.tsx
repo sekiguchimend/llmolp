@@ -11,11 +11,11 @@ export default function CtaSection() {
           {/* 左側テキスト */}
           <div className="text-center md:text-left">
             <h2 className="text-lg md:text-2xl font-bold text-[#323232] mb-1">
-              まずは無料のトライアルプランから！
+              まずは無料の診断レポートから！
             </h2>
             <p className="text-lg md:text-2xl font-bold text-[#323232]">
-              既存サービスから
-              <span className="text-[#F26B3A] border-b-[3px] border-[#F26B3A]">乗り換えずにお試し</span>
+              既存の SEO / 広告を変えずに
+              <span className="text-[#F26B3A] border-b-[3px] border-[#F26B3A]">お試し</span>
             </p>
           </div>
 

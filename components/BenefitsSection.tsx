@@ -13,7 +13,7 @@ export default function BenefitsSection() {
 
         {/* 4つのカード */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* カード1: 通算採用人数 */}
+          {/* カード1: LLM上の指名・比較言及数 */}
           <div className="bg-white rounded-xl p-4 md:p-6 text-center border-[3px] border-[#326AC3]">
             {/* アイコン */}
             <div className="flex justify-center mb-4 md:mb-6">
@@ -26,7 +26,7 @@ export default function BenefitsSection() {
             </div>
 
             {/* タイトル */}
-            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">通算採用人数</p>
+            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">LLM上の指名・比較言及数</p>
 
             {/* 数字 */}
             <div className="mb-4 md:mb-6 relative">
@@ -34,16 +34,17 @@ export default function BenefitsSection() {
                 <span className="text-4xl md:text-6xl font-bold text-[#FF6B4A] relative z-10">100</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 md:h-4 bg-[#FFEB3B] -z-0"></span>
               </div>
-              <span className="text-base md:text-lg text-[#FF6B4A] font-bold ml-1">人突破</span>
+              <span className="text-base md:text-lg text-[#FF6B4A] font-bold ml-1">件突破</span>
             </div>
 
             {/* 説明文 */}
             <p className="text-xs md:text-sm text-[#323232] leading-relaxed text-left">
-              弊社サービスを利用しての採用人数が100名を超えたことをお知らせします！
+              自社名・サービス名・主要キーワードで LLM による言及が 100 件を超えた事例も多数。
+              「AI に聞いても出てこない」状態からの脱却を実現しています。
             </p>
           </div>
 
-          {/* カード2: 採用までの期間 */}
+          {/* カード2: 改善サイクルのスピード */}
           <div className="bg-white rounded-xl p-4 md:p-6 text-center border-[3px] border-[#326AC3]">
             {/* アイコン */}
             <div className="flex justify-center mb-4 md:mb-6">
@@ -54,11 +55,11 @@ export default function BenefitsSection() {
             </div>
 
             {/* タイトル */}
-            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">採用までの期間</p>
+            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">改善サイクルのスピード</p>
 
             {/* 数字 */}
             <div className="mb-4 md:mb-6 relative">
-              <span className="text-base md:text-lg text-[#FF6B4A] font-bold mr-1">平均</span>
+              <span className="text-base md:text-lg text-[#FF6B4A] font-bold mr-1">コンテンツ改善までの期間</span>
               <div className="inline-block relative">
                 <span className="text-4xl md:text-6xl font-bold text-[#FF6B4A] relative z-10">40</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 md:h-4 bg-[#FFEB3B] -z-0"></span>
@@ -68,11 +69,12 @@ export default function BenefitsSection() {
 
             {/* 説明文 */}
             <p className="text-xs md:text-sm text-[#323232] leading-relaxed text-left">
-              候補者の選定やリストアップの手間が省け、大幅に採用時間が短縮されています！
+              プロンプト × ページの対応関係が可視化されることで、「どのページをどう直すべきか」が明確に。
+              社内のコンテンツ改善サイクルが大幅に短縮されています。
             </p>
           </div>
 
-          {/* カード3: 1年後の定着率 */}
+          {/* カード3: 問い合わせ・商談への波及 */}
           <div className="bg-white rounded-xl p-4 md:p-6 text-center border-[3px] border-[#326AC3]">
             {/* アイコン */}
             <div className="flex justify-center mb-4 md:mb-6">
@@ -85,7 +87,7 @@ export default function BenefitsSection() {
             </div>
 
             {/* タイトル */}
-            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">1年後の定着率</p>
+            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">問い合わせ・商談への波及</p>
 
             {/* 数字 */}
             <div className="mb-4 md:mb-6 relative">
@@ -98,11 +100,12 @@ export default function BenefitsSection() {
 
             {/* 説明文 */}
             <p className="text-xs md:text-sm text-[#323232] leading-relaxed text-left">
-              AIによるいマッチングシステムのおかげで、平均よりも10%近く高い数値で推移しています！
+              LLM 上での露出改善により、「御社のサービスを AI にすすめられて」という指名・準指名リードが増加。
+              Web 経由での商談創出に貢献しています。
             </p>
           </div>
 
-          {/* カード4: 採用コスト */}
+          {/* カード4: マーケティングコスト */}
           <div className="bg-white rounded-xl p-4 md:p-6 text-center border-[3px] border-[#326AC3]">
             {/* アイコン */}
             <div className="flex justify-center mb-4 md:mb-6">
@@ -113,11 +116,11 @@ export default function BenefitsSection() {
             </div>
 
             {/* タイトル */}
-            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">採用コスト</p>
+            <p className="text-[#326AC3] font-bold text-base md:text-lg mb-3 md:mb-4">マーケティングコスト</p>
 
             {/* 数字 */}
             <div className="mb-4 md:mb-6 relative">
-              <span className="text-base md:text-lg text-[#FF6B4A] font-bold mr-1">平均</span>
+              <span className="text-base md:text-lg text-[#FF6B4A] font-bold mr-1">コンテンツ制作のムダ</span>
               <div className="inline-block relative">
                 <span className="text-4xl md:text-6xl font-bold text-[#FF6B4A] relative z-10">30</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 md:h-4 bg-[#FFEB3B] -z-0"></span>
@@ -127,7 +130,8 @@ export default function BenefitsSection() {
 
             {/* 説明文 */}
             <p className="text-xs md:text-sm text-[#323232] leading-relaxed text-left">
-              効率的に採用活動を行うことができるため、大幅に採用コストをカットすることが可能です！
+              狙うべきプロンプトと不足テーマが明確になるため、なんとなく記事を書くことがなくなり、
+              投資対効果の高いコンテンツ制作に集中できます。
             </p>
           </div>
         </div>

@@ -70,7 +70,7 @@ export default function ContactSection() {
         <div className="relative">
           <div className="bg-[#FFEB3B] px-4 md:px-8 py-2 md:py-3 rounded-[10px] shadow-md">
             <p className="text-[#F26B3A] text-sm md:text-lg font-bold text-center">
-              本格的な採用シーズン開始前に<br className="md:hidden" />お問い合わせください！
+              本格的な AI検索シフトが進む前に<br className="md:hidden" />お問い合わせください！
             </p>
           </div>
           {/* 吹き出しの尾 */}
@@ -156,7 +156,7 @@ export default function ContactSection() {
             {/* 採用希望時期 */}
             <div>
               <label className="block text-sm font-medium text-[#323232] mb-1.5 md:mb-2">
-                採用希望時期 <span className="text-[#F26B3A] text-xs">必須</span>
+                導入検討時期 <span className="text-[#F26B3A] text-xs">必須</span>
               </label>
               <select
                 name="hiring_timing"
@@ -183,7 +183,7 @@ export default function ContactSection() {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder="サービスへのご質問や人材に関するご質問がある方は記載ください。"
+                placeholder="サービスへのご質問や、LLM 可視化・コンテンツ改善に関するご相談がある方は記載ください。"
                 rows={4}
                 className="w-full px-3 md:px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F26B3A] focus:border-transparent resize-none text-sm md:text-base"
               />

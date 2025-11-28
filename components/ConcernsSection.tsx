@@ -17,8 +17,8 @@ export default function ConcernsSection() {
         </svg>
       ),
       title: "そもそも",
-      highlight: "応募が来ない",
-      description: "採用ページの改修をして、SNS発信を行い、採用媒体へ高額費用を支払っても肝心の応募が全然来ない..."
+      highlight: " LLM 上に自社が出てこない",
+      description: "コンテンツを増やし、SEO を強化し、広告費もかけているのに、ChatGPT や Perplexity で検索しても、自社の名前がどこにも出てこない…。"
     },
     {
       icon: (
@@ -40,9 +40,9 @@ export default function ConcernsSection() {
           <ellipse cx="80" cy="90" rx="8" ry="5" fill="#E8EDF5" stroke="#333" strokeWidth="1"/>
         </svg>
       ),
-      title: "求めている",
-      highlight: "スキルがない",
-      description: "やっときた応募者でも、求めているスキルセットが揃わず、理想とする人材に全然出会えない..."
+      title: "どんな文脈で",
+      highlight: "紹介されているか分からない",
+      description: "たまたま自社が言及されていても、強みやターゲット、提供価値が正しく伝わっているかは不明。誤った文脈や古い情報のまま紹介されているリスクも…。"
     },
     {
       icon: (
@@ -59,9 +59,9 @@ export default function ConcernsSection() {
           <path d="M20 40 L15 35 M18 50 L12 48 M100 40 L105 35 M102 50 L108 48" stroke="#333" strokeWidth="1.5"/>
         </svg>
       ),
-      title: "すぐに",
-      highlight: "離職してしまう",
-      description: "なんとか採用した人材も、これからのタイミングで離職してしまい、中堅が育たず、中間層が薄くなっている..."
+      title: "競合ばかりが",
+      highlight: "「おすすめ」として出てくる",
+      description: "同じ領域の競合ばかりが LLM におすすめされ、比較リストにも自社が入らない。せっかくの実績や強みが、AI検索では「存在しない」のと同じ状態に…。"
     }
   ];
 
@@ -71,7 +71,7 @@ export default function ConcernsSection() {
         {/* タイトル */}
         <div className="text-center mb-10 md:mb-20">
           <h2 className="text-2xl md:text-4xl font-extrabold text-[#323232] mb-2 md:mb-3">
-            採用市場を困らせる
+            AI検索時代のマーケティングを困らせる
           </h2>
           <p className="text-3xl md:text-5xl font-extrabold text-orange-500">
             3つのポイント
