@@ -1,13 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/app/logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-[#2D2D2D] py-8 md:py-12">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        {/* 会社名 */}
-        <p className="text-white text-base md:text-lg font-medium mb-3 md:mb-4">
-          Umoren.ai
-        </p>
+        {/* ロゴ */}
+        <div className="flex justify-center mb-3 md:mb-4">
+          <Image
+            src={logo}
+            alt="Umoren.ai"
+            className="h-8 w-auto md:h-10"
+          />
+        </div>
 
         {/* 郵便番号・住所 */}
         <p className="text-gray-400 text-xs md:text-sm mb-1">

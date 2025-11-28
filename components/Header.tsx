@@ -1,31 +1,38 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import logo from "@/app/logo.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white z-50">
+    <header className="fixed top-0 left-0 w-full bg-transparent z-50">
       <div className="flex items-stretch">
         {/* Logo - 左側 */}
-        <Link href="/" className="text-xl md:text-2xl font-bold text-blue-600 px-4 md:px-8 py-4 flex items-center">
-          Umoren.ai
+        <Link href="/" className="px-4 md:px-8 py-3 md:py-4 flex items-center">
+          <Image
+            src={logo}
+            alt="Umoren.ai"
+            className="h-8 w-auto md:h-10"
+            priority
+          />
         </Link>
 
         {/* Navigation - 右寄せ (PC) */}
         <nav className="hidden lg:flex items-center gap-8 ml-auto px-8">
-          <Link href="#concerns" className="text-[#323232] text-sm font-bold hover:text-gray-600">
+          <Link href="#concerns" className="text-white text-sm font-bold hover:text-gray-200">
             お悩み
           </Link>
-          <Link href="#features" className="text-[#323232] text-sm font-bold hover:text-gray-600">
+          <Link href="#features" className="text-white text-sm font-bold hover:text-gray-200">
             4つの特徴
           </Link>
-          <Link href="#testimonials" className="text-[#323232] text-sm font-bold hover:text-gray-600">
+          <Link href="#testimonials" className="text-white text-sm font-bold hover:text-gray-200">
             お客様の声
           </Link>
-          <Link href="#flow" className="text-[#323232] text-sm font-bold hover:text-gray-600">
+          <Link href="#flow" className="text-white text-sm font-bold hover:text-gray-200">
             ご利用の流れ
           </Link>
         </nav>
@@ -61,7 +68,7 @@ export default function Header() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-[#323232]"
+            className="h-6 w-6 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-    <section className="relative min-h-[calc(100vh-80px)] bg-[#326AC3] overflow-hidden rounded-br-[40px] md:rounded-br-[80px]">
+    <section className="relative min-h-[calc(100vh-80px)] bg-[#3B82F6] overflow-hidden rounded-br-[40px] md:rounded-br-[80px]">
       {/* 背景 */}
 
       {/* 右上の装飾四角 - モバイルでは小さく */}
@@ -39,16 +39,28 @@ export default function Home() {
           <p className="text-sm md:text-lg mb-2 leading-relaxed">
             AI時代の新しい「LLM可視化」プラットフォーム
           </p>
-          <p className="text-sm md:text-lg mb-8 md:mb-12 leading-relaxed">
-            ChatGPT や Gemini、Perplexity などの LLM で
-            <br className="hidden md:block" />
-            自社がどう紹介されているか、知っていますか？
-            <br className="hidden md:block" />
-            <span className="md:hidden"> </span>
-            Umoren.ai は、主要 LLM を横断して自社サイトと競合サイトの
-            「見られ方・紹介され方」を数値化し、SaaS とコンサルティングの両面から
-            AI検索時代の『指名・比較・導入』を支援します。
+          <p className="text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
+            どの質問でブランドが拾われ、どの質問で拾われていないかを可視化し、「出てほしい質問」で選ばれるように整える - それが umoren.ai です。
           </p>
+
+          {/* URL入力フィールド：シンプルなAI SEOチェック */}
+          <div className="mb-8 md:mb-10">
+            <div className="w-full">
+              <div className="flex flex-col sm:flex-row border border-gray-200 bg-white rounded-md overflow-hidden shadow-sm">
+                <input
+                  type="url"
+                  placeholder="https://your-company.com"
+                  className="flex-1 px-4 py-3 text-sm md:text-base text-[#323232] placeholder:text-gray-400 focus:outline-none"
+                />
+                <button
+                  type="button"
+                  className="whitespace-nowrap bg-[#FF7A1A] hover:bg-[#FF6A00] text-white text-sm md:text-base font-bold px-6 md:px-10 py-3 border-t sm:border-t-0 sm:border-l border-gray-200 transition-colors"
+                >
+                  AI SEOスコアをチェック
+                </button>
+              </div>
+            </div>
+          </div>
 
           {/* 統計セクション */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-6 mb-8 md:mb-12">
@@ -76,7 +88,7 @@ export default function Home() {
 
             {/* 主要プロンプト言及率 */}
             <div className="w-24 h-24 md:w-36 md:h-36 bg-[#1E3A8A] rounded-full flex flex-col items-center justify-center border-2 md:border-4 border-[#3B82F6]">
-              <span className="text-xs md:text-sm text-gray-300">プロンプト言及率</span>
+              <span className="text-xs md:text-sm text-gray-300">質問言及率</span>
               <span className="text-2xl md:text-4xl font-bold">87<span className="text-sm md:text-xl">%</span></span>
               <span className="text-xs md:text-sm"></span>
             </div>
