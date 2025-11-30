@@ -49,9 +49,8 @@ export default function ConcernsSection() {
         <svg viewBox="0 0 120 120" className="w-40 h-40">
           {/* 退職届 */}
           <rect x="40" y="20" width="40" height="55" fill="#fff" stroke="#333" strokeWidth="1.5"/>
-          <text x="60" y="40" fontSize="8" textAnchor="middle" fill="#333">退</text>
-          <text x="60" y="52" fontSize="8" textAnchor="middle" fill="#333">職</text>
-          <text x="60" y="64" fontSize="8" textAnchor="middle" fill="#333">届</text>
+          <text x="60" y="40" fontSize="8" textAnchor="middle" fill="#333">競</text>
+          <text x="60" y="52" fontSize="8" textAnchor="middle" fill="#333">合</text>
           {/* 手 */}
           <path d="M25 50 Q20 55 25 75 L35 75 L35 55 Z" fill="#F5DEB3" stroke="#333" strokeWidth="1"/>
           <path d="M95 50 Q100 55 95 75 L85 75 L85 55 Z" fill="#F5DEB3" stroke="#333" strokeWidth="1"/>

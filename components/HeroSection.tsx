@@ -72,103 +72,65 @@ export default function HeroSection() {
           </div>
 
           {/* メインタイトル */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-8 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
             埋もれない企業へ。
           </h1>
 
           {/* 説明文 */}
-          <p className="text-sm md:text-lg mb-2 leading-relaxed">
-            AI時代の新しい「LLM可視化」プラットフォーム
-          </p>
           <p className="text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
-            どの質問でブランドが拾われ、どの質問で拾われていないかを可視化し、「出てほしい質問」で選ばれるように整える - それが umoren.ai です。
-          </p>
+AI検索で勝たせるumoren.ai          </p>
 
-          {/* URL入力フィールド：シンプルなAI SEOチェック */}
+          {/* LLM logos row */}
+          <div className="flex items-center gap-2 mb-6 md:mb-8">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="/images/ChatGPT-Logo.png" alt="ChatGPT" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+              </div>
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="/images/claude.png" alt="Claude" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+              </div>
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="/images/gemini.jpg" alt="Gemini" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+              </div>
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="/images/perplexity.png" alt="Perplexity" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+              </div>
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                <img src="/images/grok.jpg" alt="Grok" className="w-5 h-5 md:w-6 md:h-6 object-contain" />
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span className="text-white text-xs md:text-sm font-medium">& more</span>
+            </div>
+          </div>
+
+          {/* URL入力フィールド：Semrush風の分離デザイン */}
           <form onSubmit={handleSubmit} className="mb-8 md:mb-10">
-            <div className="w-full">
-              <div className="flex flex-col sm:flex-row border border-gray-200 bg-white rounded-md overflow-hidden shadow-sm">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-2xl">
+              <div className="flex-1 bg-white rounded-lg shadow-lg overflow-hidden">
                 <input
                   type="url"
-                  placeholder="https://your-company.com"
+                  placeholder="検証したいサイトのURLを入力"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   disabled={isLoading}
-                  className="flex-1 px-4 py-3 text-sm md:text-base text-[#323232] placeholder:text-gray-400 focus:outline-none disabled:bg-gray-100"
+                  className="w-full px-5 py-4 text-sm md:text-base text-[#323232] placeholder:text-gray-400 focus:outline-none disabled:bg-gray-100"
                 />
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="whitespace-nowrap bg-[#FF7A1A] hover:bg-[#FF6A00] text-white text-sm md:text-base font-bold px-6 md:px-10 py-3 border-t sm:border-t-0 sm:border-l border-gray-200 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-                >
-                  {isLoading ? "解析中..." : "AI SEOスコアをチェック"}
-                </button>
               </div>
-              {error && (
-                <p className="mt-2 text-sm text-red-200 bg-red-500/20 px-4 py-2 rounded">
-                  {error}
-                </p>
-              )}
-            </div>
-          </form>
-
-          {/* 統計セクション */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-6 mb-8 md:mb-12">
-            {/* LLM露出改善率 */}
-            <div className="w-24 h-24 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center border-4 md:border-[6px] relative" style={{
-              borderColor: '#FFD700',
-              background: 'linear-gradient(180deg, #2B5BA6 0%, #4A7DC9 100%)'
-            }}>
-              <span className="text-[10px] md:text-xs font-bold mb-0.5 md:mb-1" style={{color: '#FFD700'}}>LLM露出改善率</span>
-              <div className="flex items-start">
-                <span className="text-3xl md:text-[52px] font-bold leading-none" style={{
-                  background: 'linear-gradient(180deg, #FFD700 0%, #FFF4B8 50%, #FFFFFF 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>92</span>
-                <span className="text-sm md:text-xl font-bold ml-0.5" style={{
-                  background: 'linear-gradient(180deg, #FFD700 0%, #FFF4B8 50%, #FFFFFF 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>%</span>
-              </div>
-            </div>
-
-            {/* 主要プロンプト言及率 */}
-            <div className="w-24 h-24 md:w-36 md:h-36 bg-[#1E3A8A] rounded-full flex flex-col items-center justify-center border-2 md:border-4 border-[#3B82F6]">
-              <span className="text-xs md:text-sm text-gray-300">質問言及率</span>
-              <span className="text-2xl md:text-4xl font-bold">87<span className="text-sm md:text-xl">%</span></span>
-              <span className="text-xs md:text-sm"></span>
-            </div>
-
-            {/* 提案コンテンツ採用率 */}
-            <div className="w-24 h-24 md:w-36 md:h-36 bg-[#1E3A8A] rounded-full flex flex-col items-center justify-center border-2 md:border-4 border-[#3B82F6]">
-              <span className="text-xs md:text-sm text-gray-300">LLM可視化率</span>
-              <span className="text-2xl md:text-4xl font-bold">99<span className="text-xs md:text-base">.2%</span></span>
-              <span className="text-xs md:text-sm"></span>
-            </div>
-          </div>
-
-          {/* CTAボタンセクション */}
-          <div className="relative inline-block">
-            {/* 吹き出し */}
-            <div className="absolute -top-8 md:-top-9 left-1/2 transform -translate-x-1/2 z-10">
-              <div className="bg-white text-[#FF6B35] px-4 md:px-5 py-1 md:py-1.5 rounded-full text-sm md:text-base font-bold whitespace-nowrap shadow-md">
-                いますぐ！
-              </div>
-              {/* 吹き出しの尾 */}
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] md:border-l-[10px] border-r-[8px] md:border-r-[10px] border-t-[8px] md:border-t-[10px] border-l-transparent border-r-transparent border-t-white"></div>
-            </div>
-
-            {/* CTAボタン（青い枠線付き） */}
-            <div className="border-[3px] border-[#4A90D9] rounded-xl p-0.5">
-              <button className="bg-[#FF6347] hover:bg-[#E85A2A] text-white text-base md:text-xl font-bold px-6 md:px-12 py-3 md:py-4 rounded-lg shadow-lg transition-colors">
-                まずは無料で資料請求！
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="whitespace-nowrap bg-[#FF7A1A] hover:bg-[#FF6A00] text-white text-sm md:text-base font-bold px-8 md:px-10 py-4 rounded-lg shadow-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+              >
+                {isLoading ? "解析中..." : "AI SEOスコアをチェック"}
               </button>
             </div>
-          </div>
+            {error && (
+              <p className="mt-3 text-sm text-red-200 bg-red-500/20 px-4 py-2 rounded max-w-2xl">
+                {error}
+              </p>
+            )}
+          </form>
         </div>
       </div>
 
