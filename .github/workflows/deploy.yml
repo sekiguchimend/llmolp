@@ -54,6 +54,11 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             
+            # Clear Next.js cache and build artifacts
+            echo "🧹 Cleaning build cache..."
+            rm -rf .next
+            rm -rf node_modules/.cache
+            
             # Install dependencies
             echo "📦 Installing dependencies..."
             npm ci --production=false
@@ -65,24 +70,45 @@ jobs:
             export NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY:-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsYWNlaG9sZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUxOTIwMDAsImV4cCI6MTk2MDc2ODAwMH0.placeholder"}
             npm run build
             
-            # Restart PM2 process
-            echo "🔄 Restarting application..."
-            pm2 restart umoren-ai || pm2 start ecosystem.config.js
+            # Stop PM2 process completely before restarting
+            echo "🛑 Stopping PM2 process..."
+            pm2 stop umoren-ai || true
+            pm2 delete umoren-ai || true
+            
+            # Start PM2 process fresh
+            echo "🔄 Starting application..."
+            pm2 start ecosystem.config.js
             pm2 save
+            
+            # Wait a moment for the app to start
+            sleep 3
             
             # Check status
             echo "✅ Deployment complete!"
             pm2 status
             
-            # Show last 10 lines of logs
-            pm2 logs umoren-ai --lines 10 --nostream
+            # Show last 20 lines of logs
+            echo "📋 Recent logs:"
+            pm2 logs umoren-ai --lines 20 --nostream
+            
+            # Verify the app is responding
+            echo "🔍 Verifying application..."
+            sleep 2
+            curl -f http://localhost:3000 > /dev/null && echo "✅ App is responding on port 3000" || echo "⚠️ App might not be responding"
           ENDSSH
       
       - name: Verify Deployment
         run: |
           echo "🌐 Verifying deployment..."
-          sleep 5
-          curl -f -s -o /dev/null -w "%{http_code}" https://umoren.ai || echo "Site verification failed"
+          sleep 10
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://umoren.ai || echo "000")
+          echo "HTTP Status Code: $HTTP_CODE"
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Site is responding correctly!"
+          else
+            echo "⚠️ Site returned status code: $HTTP_CODE"
+            echo "This might be normal if the site is still starting up."
+          fi
       
       - name: Notify on Success
         if: success()
