@@ -34,7 +34,10 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/deploy_key.pem
           chmod 600 ~/.ssh/deploy_key.pem
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+          # ssh-keyscan can fail if port 22 is blocked from GitHub runners.
+          # We already use StrictHostKeyChecking=no in the ssh command below,
+          # so we ignore ssh-keyscan failures to avoid breaking the workflow.
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
       
       - name: Deploy to EC2
         run: |
