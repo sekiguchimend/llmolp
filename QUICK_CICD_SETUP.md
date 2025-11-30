@@ -10,7 +10,7 @@ Run this script to set up git on your EC2 instance:
 
 ```bash
 ./setup-ec2-git.sh
-```
+```test
 
 When prompted, enter your GitHub repository URL:
 ```
