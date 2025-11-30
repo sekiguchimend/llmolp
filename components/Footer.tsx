@@ -11,7 +11,7 @@ export default function Footer() {
           <Image
             src={logo}
             alt="Umoren.ai"
-            className="h-8 w-auto md:h-10"
+            className="h-10 w-auto md:h-14"
           />
         </div>
 

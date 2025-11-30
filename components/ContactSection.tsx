@@ -70,7 +70,7 @@ export default function ContactSection() {
         <div className="relative">
           <div className="bg-[#FFEB3B] px-4 md:px-8 py-2 md:py-3 rounded-[10px] shadow-md">
             <p className="text-[#F26B3A] text-sm md:text-lg font-bold text-center">
-              本格的な AI検索シフトが進む前に<br className="md:hidden" />お問い合わせください！
+              本格的な AI検索シフトが進む前にお問い合わせください！
             </p>
           </div>
           {/* 吹き出しの尾 */}
@@ -170,6 +170,7 @@ export default function ContactSection() {
                 <option value="3months">3ヶ月以内</option>
                 <option value="6months">6ヶ月以内</option>
                 <option value="1year">1年以内</option>
+                <option value="other">その他</option>
                 <option value="undecided">未定</option>
               </select>
             </div>
@@ -220,10 +221,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 md:py-4 rounded-full text-white text-base md:text-lg font-bold shadow-lg transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{
-                  background: 'linear-gradient(180deg, #FDBA74 0%, #F26B3A 100%)',
-                }}
+                className="w-full py-3 md:py-4 rounded-full bg-[#F26B3A] hover:bg-[#E05A2A] text-white text-base md:text-lg font-bold shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "送信中..." : "送信する"}
               </button>
